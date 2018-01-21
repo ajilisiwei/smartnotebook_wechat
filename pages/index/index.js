@@ -1,5 +1,6 @@
 const noteData = [{ id: 1, text: "床前明月光" }, { id: 2, text: "疑是地上霜" }, { id: 3, text: "床前明月光" }, { id: 4, text: "疑是地上霜" }, { id: 5,text: "床前明月光" }];
 
+var service=require('./utils/service.js');
 var utils=require('./utils/utils.js');
 
 Page({
@@ -73,8 +74,10 @@ Page({
   },
 
   //增加笔记
-  addNote: () => {
-    console.log("你点击了增加按键...")
+  addNote: function() {
+    var that=this;
+    console.log("你点击了增加按键...");
+    utils.topNoteTypeView();
   },
 
   //搜索框
@@ -84,6 +87,7 @@ Page({
     });
   },
 
+//隐藏搜索框
   hideInput: function () {
     this.setData({
       inputVal: "",
@@ -91,17 +95,19 @@ Page({
     });
   },
 
+//清除搜索框内文字
   clearInput: function () {
     this.setData({
       inputVal: ""
     });
   },
 
+//搜索框输入
   inputTyping: function (e) {
     var that=this;
     console.log(e);
     let text=e.detail.value;
-    var dataset = utils.getNoteList(text, this.refreshListData,that);
+    var dataset = service.getNoteList(text, this.refreshListData,that);
   },
 
 //刷新列表的数据
@@ -113,13 +119,21 @@ Page({
     });
   },
 
-
-  showNote:(e)=>{
+//显示笔记详情
+  showNote: function (e) {
     var id = e.currentTarget.dataset.index;
     console.log(id);
     wx.navigateTo({
       url: './note/notedetails?id='+id,
     })
-  }
+  },
+
+  // //新增笔记
+  // addNoteByType: function(notetype) {
+  //   console.log(notetype);
+  //   wx.navigateTo({
+  //     url: './note/notedetails',
+  //   })
+  // }
 
 })

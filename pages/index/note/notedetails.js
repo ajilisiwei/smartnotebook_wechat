@@ -1,4 +1,5 @@
-const utils = require('../utils/utils.js');
+const service = require('../utils/service.js');
+let isNew=false;
 
 Page({
 
@@ -6,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    note: { title: "床前明月光", content: "" }
+    note: { title: "", content: "" }
   },
 
   /**
@@ -16,7 +17,11 @@ Page({
     var that = this;
     console.log("笔记id=" + options.id);
     var id = options.id;
-    utils.getNoteById(id, this.showNoteDetails, that);
+    if(!id){ //新增笔记
+      isNew=true;
+    }else{  //编辑笔记
+      service.getNoteById(id, this.showNoteDetails, that);
+    }
   },
 
   showNoteDetails: function (that, data) {
