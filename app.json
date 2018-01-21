@@ -1,0 +1,45 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/index",
+    "pages/memo/index",
+    "pages/index/note/notedetails"
+  ],
+  "window": {
+    "navigationBarTitleText": "SmartNotebook",
+    "enablePullDownRefresh":true
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "笔记",
+        "iconPath": "images/wechat.png",
+        "selectedIconPath": "images/wechatHL.png"
+      },
+      {
+        "pagePath": "pages/memo/index",
+        "text": "备忘录",
+        "iconPath": "images/wechat.png",
+        "selectedIconPath": "images/wechatHL.png"
+      },
+      {
+        "pagePath": "pages/logs/index",
+        "text": "时钟",
+        "iconPath": "images/wechat.png",
+        "selectedIconPath": "images/wechatHL.png"
+      },
+      {
+        "pagePath": "pages/logs/index",
+        "text": "我",
+        "iconPath": "images/wechat.png",
+        "selectedIconPath": "images/wechatHL.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

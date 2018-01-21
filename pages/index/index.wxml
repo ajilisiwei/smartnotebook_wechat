@@ -1,0 +1,31 @@
+<view style='flex-direction:column;'>
+<!-- 搜索栏 -->
+  <view class="weui-search-bar">
+    <view class="weui-search-bar__form">
+      <view class="weui-search-bar__box">
+        <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+        <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+        <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+          <icon type="clear" size="14"></icon>
+        </view>
+      </view>
+      <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+        <icon class="weui-icon-search" type="search" size="14"></icon>
+        <view class="weui-search-bar__text">搜索</view>
+      </label>
+    </view>
+    <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+  </view>
+
+<!-- 滚动列表 -->
+  <view>
+    <scroll-view class="scroll" scroll-top="{{scrollTop}}" style="height:90%;" scroll-y="true" bindscroll="scrll" bindscrolltolower="loadMore" enable-back-to-top="true" scroll-with-animation="true">
+      <view class="block" wx:for="{{listLi}}" wx:for-item="item" hover-start-time="100" hover-class="list-hover" bindtap='showNote' data-index='{{item.id}}'>
+        <text>{{item.text}}</text>
+      </view>
+    </scroll-view>
+  </view>
+
+<!-- 新增笔记按键 -->
+  <view class='btn-add' catchtap='addNote' hover-class="btn-add-hover">+</view>
+</view>

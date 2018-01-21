@@ -1,0 +1,23 @@
+.note-title{
+  padding:10rpx 40rpx;
+  border-bottom:1px solid #dde0de;
+}
+
+.note-details{
+    width: 100%;
+    height: 100%;
+}
+
+.note-textarea{
+  width: 90%;
+  height: 90%;
+  padding: 10rpx 40rpx;
+}
+
+.empty_tip{
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  display:flex;
+  flex-direction:column;
+}

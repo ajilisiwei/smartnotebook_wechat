@@ -1,0 +1,24 @@
+.block {
+  padding: 16rpx;
+  background-color: #fff;
+  text-align: left;
+  padding-left: 40rpx;
+  border-bottom: 1rpx solid #dde0de;
+}
+
+.searchbar-result{
+    margin-top: 0;
+    font-size: 14px;
+}
+.searchbar-result:before{
+    display: none;
+}
+.weui-cell{
+    padding: 12px 15px 12px 35px;
+}
+
+/* 列表点击态效果 */
+.list-hover{
+  background-color: #dde0de
+}
+

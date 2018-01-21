@@ -1,0 +1,8 @@
+<view class='empty_tip'>
+  <view class="note-title">
+    <input placeholder="点击输入标题" auto-focus value="{{note.title}}" maxlength='-1' />
+  </view>
+  <view class="note-details">
+    <textarea class='note-textarea' bindblur="bindTextAreaBlur" placeholder="自动变高" value="{{note.content}}"/>
+  </view>
+</view>
