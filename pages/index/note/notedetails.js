@@ -1,4 +1,5 @@
 const service = require('../utils/service.js');
+const utils= require('../utils/utils.js');
 let isNew=false;
 
 Page({
@@ -24,12 +25,41 @@ Page({
     }
   },
 
+/**
+ * 显示笔记的内容
+*/
   showNoteDetails: function (that, data) {
     that.setData({
       note: data,
       done: true
     });
   },
+
+
+/**
+ * 操作按键点击事件
+*/
+  showOperations:function(){
+    utils.topOperationsView();
+  },
+
+
+  /**
+   * 笔记标题完成
+  */
+  noteTitleConfirm:function(e){
+    console.log(e.detail.value);
+    //01.请求添加笔记接口
+    //02.返回上一页
+  },
+
+  /**
+   * 笔记内容完成
+  */
+  noteDetailsConfirm: function (e) {
+    console.log(e.detail.value)
+  },
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成

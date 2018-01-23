@@ -1,8 +1,15 @@
+<!-- 笔记标题 -->
 <view class='empty_tip'>
   <view class="note-title">
-    <input placeholder="点击输入标题" value="{{note.title}}" maxlength='-1' />
+    <input placeholder="点击输入标题" value="{{note.title}}" maxlength='-1'  bindconfirm='noteTitleConfirm' bindblur='noteTitleConfirm' show-confirm-bar="true"/>
   </view>
+
+  <!-- 笔记内容 -->
   <view class="note-details">
-    <textarea class='note-textarea'  bindblur="bindTextAreaBlur" placeholder="输入笔记内容..." value="{{note.content}}"/>
+     <textarea class='note-textarea'  bindblur="bindTextAreaBlur" placeholder="输入笔记内容..." value="{{note.content}}" bindblur='noteDetailsConfirm' bindconfirm='noteDetailsConfirm'/> 
   </view>
+
+  <!-- 操作按键 -->
+  <view class='btn-add' catchtap='showOperations' hover-class="btn-add-hover">...</view>
+
 </view>

@@ -14,6 +14,7 @@ Page({
   
   onLoad: function (options) {
     this.getList(1);
+    wx.showNavigationBarLoading()
   },
 
   onPullDownRefresh: function () {

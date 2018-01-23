@@ -2,7 +2,9 @@ var config = {
   prefix: "http://wechatdev.ajilisiwei.com"
 }
 
-//获取笔记列表
+/**
+ * 获取笔记列表
+ * */
 exports.getNoteList = (text, next, that) => {
   new Promise((resolve, reject) => {
     wx.request({
@@ -22,7 +24,9 @@ exports.getNoteList = (text, next, that) => {
   }).catch((err) => console.error(err))
 }
 
-// 根据id查询note
+/**
+ * 根据id查询note
+ * */ 
 exports.getNoteById = (id, next, that) => {
   new Promise((resolve, reject) => {
     // wx.request({
@@ -38,5 +42,12 @@ exports.getNoteById = (id, next, that) => {
       next(that, res)
     }
   }).catch((err) => console.error(err))
+}
+
+/**
+ * 添加笔记
+*/
+exports.addNote=(note)=>{
+  
 }
 
